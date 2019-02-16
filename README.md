@@ -1,5 +1,5 @@
-# react-workshop-demo
-This is the demo application we will be building for the React Workshop on Day 1
+# Hooks Movie App
+This is the demo application using React Hooks!!!
 
 # Getting Started
 These instructions should get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -19,7 +19,7 @@ cd <folder-name>
 
 - Clone this repository:
 ```
-git clone https://github.com/samie820/react-workshop-demo.git .
+git clone https://github.com/samie820/hooks-movie-app.git
 ```
 
 - Install all the project's dependencies:
@@ -31,12 +31,8 @@ yarn or npm install
 npm start or yarn start
 ```
 
-# Structure
-This repository has been seperated into different branches based on the checkpoints reached and the concepts explained, you can see the various branches below
-- TODO: Add branches and description
-
 # Deployment
-The app will be deployed using either heroku or Netlify
+The app can be deployed using either heroku or Netlify
 
 # Built With
 - Javascript
