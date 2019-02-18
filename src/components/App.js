@@ -52,6 +52,7 @@ const App = () => {
       });
   }, []);
 
+  // you can add this to the onClick listener of the Header component
   const refreshPage = () => {
     window.location.reload();
   };
@@ -92,7 +93,7 @@ const App = () => {
           <div className="errorMessage">{errorMessage}</div>
         ) : (
           movies.map((movie, index) => (
-            <Movie key={`${index}-${movie.Title}`} meta={movie} />
+            <Movie key={`${index}-${movie.Title}`} movie={movie} />
           ))
         )}
       </div>
