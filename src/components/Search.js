@@ -1,6 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { SearchContext } from '../components/App';
 
-const Search = ({ search }) => {
+const MOVIE_API_URL = "https://www.omdbapi.com/?s=man&apikey=4a3b711b";
+
+
+const Search = () => {
+  const {dispatch} = React.useContext(SearchContext);
   const [searchValue, setSearchValue] = useState("");
 
   const handleSearchInputChanges = e => {
@@ -11,10 +16,42 @@ const Search = ({ search }) => {
     setSearchValue("");
   };
 
+
+
+  useEffect(() => {
+    fetch(MOVIE_API_URL)
+      .then(response => response.json())
+      .then(jsonResponse => {
+        dispatch({
+          type: "SEARCH_MOVIES_SUCCESS",
+          payload: jsonResponse.Search
+        });
+      });
+  }, []);
+
+
   const callSearchFunction = e => {
     e.preventDefault();
-    search(searchValue);
-    resetInputField();
+    dispatch({
+      type: "SEARCH_MOVIES_REQUEST"
+    });
+
+    fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=4a3b711b`)
+      .then(response => response.json())
+      .then(jsonResponse => {
+        if (jsonResponse.Response === "True") {
+          dispatch({
+            type: "SEARCH_MOVIES_SUCCESS",
+            payload: jsonResponse.Search
+          });
+          resetInputField();
+        } else {
+          dispatch({
+            type: "SEARCH_MOVIES_FAILURE",
+            error: jsonResponse.Error
+          });
+        }
+      });
   };
 
   return (
