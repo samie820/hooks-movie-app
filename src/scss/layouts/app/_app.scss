@@ -14,14 +14,27 @@ $searchButton-border-color: $black;
   &__searchForm {
     margin: $lg 0;
 
-    @include flex(row, wrap, center, normal);
+    @include flex(column, wrap, center, center);
+
+    @include media-small-tablet {
+      @include flex(row, wrap, center, normal);
+    }
   }
 
   &__searchInput {
-    width: 40%;
-    min-width: 170px;
+    width: 80%;
     border: 1px solid;
-    padding: 0 $xs;
+
+    padding: $xs;
+    margin-bottom: $xs;
+
+    @include media-small-tablet {
+      width: 40%;
+      min-width: 170px;
+
+      padding: 0 $xs;
+      margin: 0;
+    }
   }
 
   &__searchButton {
