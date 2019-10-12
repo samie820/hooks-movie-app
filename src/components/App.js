@@ -1,55 +1,25 @@
 import React, { useReducer, useEffect } from "react";
+
 import "../App.css";
 import Header from "./Header";
 import Movie from "./Movie";
-import spinner from "../ajax-loader.gif";
+import spinner from "../assets/ajax-loader.gif";
 import Search from "./Search";
+import { initialState, reducer } from "../store/reducer";
+import axios from "axios";
 
 const MOVIE_API_URL = "https://www.omdbapi.com/?s=man&apikey=4a3b711b";
-
-const initialState = {
-  loading: true,
-  movies: [],
-  errorMessage: null
-};
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "SEARCH_MOVIES_REQUEST":
-      return {
-        ...state,
-        loading: true,
-        errorMessage: null
-      };
-    case "SEARCH_MOVIES_SUCCESS":
-      return {
-        ...state,
-        loading: false,
-        movies: action.payload
-      };
-    case "SEARCH_MOVIES_FAILURE":
-      return {
-        ...state,
-        loading: false,
-        errorMessage: action.error
-      };
-    default:
-      return state;
-  }
-};
 
 const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    fetch(MOVIE_API_URL)
-      .then(response => response.json())
-      .then(jsonResponse => {
-        dispatch({
-          type: "SEARCH_MOVIES_SUCCESS",
-          payload: jsonResponse.Search
-        });
+    axios.get(MOVIE_API_URL).then(jsonResponse => {
+      dispatch({
+        type: "SEARCH_MOVIES_SUCCESS",
+        payload: jsonResponse.data.Search
       });
+    });
   }, []);
 
   // you can add this to the onClick listener of the Header component
