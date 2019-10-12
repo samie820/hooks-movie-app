@@ -7,7 +7,8 @@ $searchButton-border-color: $black;
   text-align: center;
 
   &__intro {
-    font-size: 20px;
+    font-size: $fs-20;
+
     margin: $lg 0;
   }
 
@@ -39,11 +40,14 @@ $searchButton-border-color: $black;
 
   &__searchButton {
     padding: $xs;
+    margin-left: $xs;
+
     background-color: transparent;
     color: $searchButton-color;
     border: 1px solid $searchButton-border-color;
+
     width: 80px;
-    margin-left: $xs;
+
     cursor: pointer;
 
     &:hover {
