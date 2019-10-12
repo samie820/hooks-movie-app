@@ -1,42 +1,45 @@
+$searchButton-hover-back: $shark;
+$searchButton-hover-color: $antiquewhite;
+$searchButton-color: $black;
+$searchButton-border-color: $black;
+
 .o-app {
   text-align: center;
 
   &__intro {
     font-size: 20px;
+    margin: $lg 0;
   }
 
   &__searchForm {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 10px;
+    margin: $lg 0;
+
+    @include flex(row, wrap, center, normal);
   }
 
   &__searchInput {
     width: 40%;
     min-width: 170px;
+    border: 1px solid;
+    padding: 0 $xs;
   }
 
   &__searchButton {
-    padding: 5px;
+    padding: $xs;
     background-color: transparent;
-    color: black;
-    border: 1px solid black;
+    color: $searchButton-color;
+    border: 1px solid $searchButton-border-color;
     width: 80px;
-    margin-left: 5px;
+    margin-left: $xs;
     cursor: pointer;
 
     &:hover {
-      background-color: #282c34;
-      color: antiquewhite;
+      background-color: $searchButton-hover-back;
+      color: $searchButton-hover-color;
     }
   }
 
   &__flexContainer {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
+    @include flex(row, wrap, space-around, normal);
   }
 }

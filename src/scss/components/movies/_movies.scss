@@ -1,19 +1,26 @@
+$movie-border-color: $black;
+$movie-title-back: $silver;
+
 .m-movie {
   width: 350px;
-  border: 1px solid black;
-  margin: 5px;
-  border-radius: 5px;
+  border: 1px solid $movie-border-color;
+  margin: $xs;
+  border-radius: $xs;
   overflow: hidden;
 
   &__title {
     text-transform: uppercase;
     margin: 0;
-    padding: 20px 0;
-    background: #ccc;
+    padding: $lg 0;
+    background: $movie-title-back;
   }
 
   &__posterImage {
     width: 100%;
     height: 445px;
+  }
+
+  &__paragraph {
+    margin: $lg 0;
   }
 }
