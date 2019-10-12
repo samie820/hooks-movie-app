@@ -8,11 +8,11 @@ const Movie = ({ movie }) => {
     movie.Poster === "N/A" ? DEFAULT_PLACEHOLDER_IMAGE : movie.Poster;
 
   return (
-    <div className="movie">
-      <h4 className="movie__title">{movie.Title}</h4>
+    <div className="m-movie">
+      <h4 className="m-movie__title">{movie.Title}</h4>
 
       <img
-        className="movie__posterImage"
+        className="m-movie__posterImage"
         alt={`The movie titled: ${movie.Title}`}
         src={poster}
       />

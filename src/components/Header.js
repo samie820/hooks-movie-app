@@ -2,8 +2,8 @@ import React from "react";
 
 const Header = props => {
   return (
-    <header className="App-header">
-      <h2>{props.text}</h2>
+    <header className="o-header">
+      <h2 className="o-header__title">{props.text}</h2>
     </header>
   );
 };

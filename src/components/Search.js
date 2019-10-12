@@ -18,14 +18,20 @@ const Search = ({ search }) => {
   };
 
   return (
-    <form className="search">
+    <form className="o-app__searchForm">
       <input
+        className="o-app__searchInput"
         value={searchValue}
         onChange={handleSearchInputChanges}
         type="text"
       />
 
-      <input onClick={callSearchFunction} type="submit" value="SEARCH" />
+      <input
+        className="o-app__searchButton"
+        onClick={callSearchFunction}
+        type="submit"
+        value="SEARCH"
+      />
     </form>
   );
 };
