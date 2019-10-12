@@ -17,7 +17,7 @@ const Movie = ({ movie }) => {
         src={poster}
       />
 
-      <p>({movie.Year})</p>
+      <p className="m-movie__paragraph">({movie.Year})</p>
     </div>
   );
 };
