@@ -21,6 +21,7 @@ const Search = ({ search }) => {
     <form className="o-app__searchForm">
       <input
         className="o-app__searchInput"
+        placeholder="Search any movie or serie  🎞📽..."
         value={searchValue}
         onChange={handleSearchInputChanges}
         type="text"
