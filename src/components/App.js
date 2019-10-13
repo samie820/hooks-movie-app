@@ -70,7 +70,7 @@ const App = () => {
 
         <p className="o-app__intro">Sharing a few of our favourite movies</p>
 
-        <div className="o-app__flexContainer">{retrievedMovies}</div>
+        <div className="o-app__movieContainer">{retrievedMovies}</div>
       </div>
     </div>
   );
