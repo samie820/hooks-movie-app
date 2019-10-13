@@ -56,7 +56,14 @@ $searchButton-border-color: $black;
     }
   }
 
-  &__flexContainer {
-    @include flex(row, wrap, space-around, normal);
+  &__movieContainer {
+    @include flex(row, wrap, center, normal);
+
+    @include media-small-tablet {
+      justify-content: space-around;
+    }
+    @include media-small-desktop {
+      justify-content: space-between;
+    }
   }
 }
