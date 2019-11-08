@@ -1,0 +1,21 @@
+$header-color: $white;
+$header-back: $shark;
+
+.o-header {
+  height: 70px;
+
+  padding: $lg;
+  font-size: $fs-18;
+
+  color: $header-color;
+  background-color: $header-back;
+
+  cursor: pointer;
+
+  @include flex(column, no-wrap, center);
+
+  &__title {
+    letter-spacing: $xs;
+    margin: 0;
+  }
+}

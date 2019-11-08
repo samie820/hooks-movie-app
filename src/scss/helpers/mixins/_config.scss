@@ -1,0 +1,10 @@
+@mixin transition-ease {
+  transition: all .5s ease-in-out;
+}
+
+@mixin flex($direction, $wrapType, $justify, $align: center) {
+  display: flex;
+  flex-flow: $direction $wrapType;
+  justify-content: $justify;
+  align-items: $align;
+}

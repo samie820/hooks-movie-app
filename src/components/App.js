@@ -52,9 +52,9 @@ const App = () => {
 
   const retrievedMovies =
     loading && !errorMessage ? (
-      <img className="spinner" src={spinner} alt="Loading spinner" />
+      <img className="a-spinner" src={spinner} alt="Loading spinner" />
     ) : errorMessage ? (
-      <div className="errorMessage">{errorMessage}</div>
+      <div className="a-errorMessage">{errorMessage}</div>
     ) : (
       movies.map((movie, index) => (
         <Movie key={`${index}-${movie.Title}`} movie={movie} />
@@ -62,15 +62,15 @@ const App = () => {
     );
 
   return (
-    <div className="App">
+    <div className="o-app">
       <div className="m-container">
         <Header text="HOOKED" />
 
         <Search search={search} />
 
-        <p className="App-intro">Sharing a few of our favourite movies</p>
+        <p className="o-app__intro">Sharing a few of our favourite movies</p>
 
-        <div className="movies">{retrievedMovies}</div>
+        <div className="o-app__movieContainer">{retrievedMovies}</div>
       </div>
     </div>
   );

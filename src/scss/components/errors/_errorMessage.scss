@@ -1,0 +1,9 @@
+$error-color: $orange;
+
+.a-errorMessage {
+  margin: auto;
+
+  color: $error-color;
+
+  font-weight: $bold;
+}
